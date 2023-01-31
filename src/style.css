@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body {
+    background: #000000!important;
+}
+@font-face {
+    font-family: MonsterratBlack;
+    src: url('~@/assets/fonts/Montserrat-Black.ttf');
+}
+
+@font-face {
+    font-family: MonsterratLight;
+    src: url('~@/assets/fonts/Montserrat-Light.ttf');
+}
+
+@font-face {
+    font-family: MonsterratMedium;
+    src: url('~@/assets/fonts/Montserrat-Medium.ttf');
+}
+
+@font-face {
+    font-family: MonsterratRegular;
+    src: url('~@/assets/fonts/Montserrat-Regular.ttf');
+}
+.no-scroll-bar::-webkit-scrollbar {
+    display: none;
+}
