@@ -1,8 +1,8 @@
 <template>
   <div>
-    <div class="flex flex-col justify-center items-center section1 pt-8rem pb-3rem max-w-1440px mx-auto">
-      <img class="max-w-460px w-8/12 xs:w-5/12 sm:w-5/12" src="~@/assets/home-img1.png" alt="">
-      <div class="-mt-80px xs:-mt-60px sm:-mt-80px md:-mt-90px lg:-mt-100px whitespace-pre-line text-center px-6">
+    <div class="flex flex-col justify-center items-center section1 pt-6rem lg:pt-6rem pb-3rem max-w-1440px mx-auto">
+      <img class="max-w-800px w-full xs:w-4/5 sm:w-7/10" src="~@/assets/home-img1.gif" alt="">
+      <div class="-mt-6rem xs:-mt-6rem sm:-mt-10rem md:-mt-12rem lg:-mt-13rem whitespace-pre-line text-center px-6">
         <div class="text-34px leading-34px xs:text-34px sm:text-48px sm:leading-48px
                   md:text-60px md:leading-60px lg:text-78px lg:leading-78px
                   font-MonsterratMedium">{{$t('home.section1P1')}}</div>

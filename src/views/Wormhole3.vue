@@ -87,20 +87,54 @@
                   md:text-60px md:leading-60px font-MonsterratMedium text-primaryColor">
           {{$t('wormhole.scenario')}}
         </div>
-        <div class="flex items-center mt-32px">
-          <div class="flex-1 font-MonsterratLight text-12pgix leading-16px">{{$t('wormhole.section3P1')}}</div>
-          <div class="flex-1">
-
+        <div class="flex flex-col md:flex-row items-start md:items-center my-32px gap-36px">
+          <div class="flex-1 font-MonsterratLight text-12px leading-16px">
+            <div class="max-w-400px">
+              {{$t('wormhole.section3P1')}}
+            </div>
+          </div>
+          <div class="flex-1 flex items-center justify-end gap-16px sm:gap-56px">
+            <div class="border-b-1 text-center">
+              <div class="xs:whitespace-nowrap text-12px leading-16px">{{$t('wormhole.applicationScenario')}}</div>
+              <div class="font-MonsterratBlack text-20px leading-20px cursor-pointer my-4px"
+                   :class="appCarouselIndex===0?'text-primaryColor':''"
+                   @click="setAppCarouselIndex(0)">01</div>
+            </div>
+            <div class="border-b-1 text-center">
+              <div class="xs:whitespace-nowrap text-12px leading-16px">{{$t('wormhole.applicationScenario')}}</div>
+              <div class="font-MonsterratBlack text-20px leading-20px cursor-pointer my-4px"
+                   :class="appCarouselIndex===1?'text-primaryColor':''"
+                   @click="setAppCarouselIndex(1)">02</div>
+            </div>
+            <div class="border-b-1 text-center">
+              <div class="xs:whitespace-nowrap text-12px leading-16px">{{$t('wormhole.applicationScenario')}}</div>
+              <div class="font-MonsterratBlack text-20px leading-20px cursor-pointer my-4px"
+                   :class="appCarouselIndex===2?'text-primaryColor':''"
+                   @click="setAppCarouselIndex(2)">03</div>
+            </div>
           </div>
         </div>
       </div>
-      <div class="px-15px sm:px-2rem mt-4rem" :style="{marginLeft: marginLeft}">
-        <div class="no-scroll-bar overflow-auto">
-          <div class="flex gap-52px">
-            <img class="h-380px" src="~@/assets/application-img1.png" alt="">
-            <img class="h-380px" src="~@/assets/application-img1.png" alt="">
-            <img class="h-380px" src="~@/assets/application-img1.png" alt="">
+      <div class="xl:max-w-1280px xl:mx-auto pl-15px sm:pl-2rem" :style="{marginLeft: marginLeft}">
+        <div class="overflow-hidden">
+          <div class="flex gap-2.5rem no-scroll-bar c-carousel pr-15px sm:pr-2rem" ref="appCarouselRef"
+               @scroll="appScroll">
+            <img class="h-380px object-contain object-top c-carousel-item" src="~@/assets/application-img1.png" alt="">
+            <img class="h-380px object-contain object-top c-carousel-item" src="~@/assets/application-img2.png" alt="">
+            <img class="h-380px object-contain object-top c-carousel-item" src="~@/assets/application-img3.png" alt="">
           </div>
+        </div>
+      </div>
+      <div class="max-w-1080px px-15px sm:px-2rem mx-auto relative pb-6rem">
+        <div class="flex items-center justify-center gap-x-20px py-20px">
+          <button class="disabled:opacity-50" :disabled="appCarouselIndex===0"
+                  @click="setAppCarouselIndex(appCarouselIndex-=1)">
+            <img class="transform rotate-180 w-2.6rem h-2.6rem" src="~@/assets/icon-change-primary.svg" alt="">
+          </button>
+          <button class="disabled:opacity-50" :disabled="appCarouselIndex===2"
+                  @click="setAppCarouselIndex(appCarouselIndex+=1)">
+            <img class="w-2.6rem h-2.6rem" src="~@/assets/icon-change-primary.svg" alt="">
+          </button>
         </div>
       </div>
     </div>
@@ -118,11 +152,22 @@ const highlightCarouselRef = ref()
 const setCarouselIndex = (index) => {
   highlightCarouselRef.value.setActiveItem(index)
 }
+const appCarouselIndex = ref(0)
+const appCarouselRef = ref()
+const setAppCarouselIndex = (index) => {
+  appCarouselIndex.value = index
+  console.log(appCarouselRef.value.scrollLeft)
+  appCarouselRef.value.scrollLeft = index * 730
+}
+const appScroll = () => {
+  appCarouselIndex.value = Math.ceil(appCarouselRef.value.scrollLeft/730)
+}
 const carouselHeight = ref('360px')
 const marginLeft = ref('0px')
 onMounted(() => {
   const screenWidth = document.body.offsetWidth
   if(screenWidth>1080) marginLeft.value = (screenWidth-1080)/2 + 'px'
+  console.log(marginLeft.value)
   if(screenWidth<524) carouselHeight.value = screenWidth - 140 + 'px'
   else if(screenWidth>1080) carouselHeight.value = '450px'
   else carouselHeight.value = '360px'
@@ -140,4 +185,12 @@ onUnmounted(() => {
 </script>
 
 <style scoped>
+.c-carousel {
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+}
+.c-carousel-item {
+  scroll-snap-align: start;
+}
 </style>

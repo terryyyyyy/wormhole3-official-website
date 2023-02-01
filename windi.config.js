@@ -9,7 +9,8 @@ export default defineConfig({
         primaryColor: '#8534F2',
         color91: '#9100EE',
         colorE3: '#E3E5E8',
-        color97: '#979797'
+        color97: '#979797',
+        color28: '#282828'
       },
       screens: {
         'xs': { min: '500px' },
