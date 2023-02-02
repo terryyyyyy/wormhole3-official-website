@@ -53,24 +53,14 @@
                          :interval="3500" arrow="never" :autoplay="true"
                          :initial-index="carouselIndex"
                          @change="carouselChange">
-              <el-carousel-item v-for="item in 3" :key="item">
-                <div class="relative font-MonsterratMedium text-center">
-                  <img class="mx-auto " src="~@/assets/feature-img1.png" alt="">
-                  <div class="absolute top-0 left-0 right-0 bottom-0 px-20px xs:px-40px flex flex-col justify-center items-center gap-16px">
-                    <div class="bg-color91 h-68px xs:h-88px flex flex-col justify-center items-center rounded-full w-full max-w-460px">
-                      <div class="text-16px xs:text-20px">{{$t('home.fT1')}}</div>
-                      <div class="text-12px">{{$t('home.fP1')}}</div>
-                    </div>
-                    <div class="bg-color91 h-68px xs:h-88px flex flex-col justify-center items-center rounded-full w-full max-w-460px">
-                      <div class="text-16px xs:text-20px">{{$t('home.fT2')}}</div>
-                      <div class="text-12px">{{$t('home.fP2')}}</div>
-                    </div>
-                    <div class="bg-color91 h-68px xs:h-88px flex flex-col justify-center items-center rounded-full w-full max-w-460px">
-                      <div class="text-16px xs:text-20px">{{$t('home.fT3')}}</div>
-                      <div class="text-12px">{{$t('home.fP3')}}</div>
-                    </div>
-                  </div>
-                </div>
+              <el-carousel-item>
+                <img class="mx-auto w-full object-contain" src="~@/assets/feature-img1.png" alt="">
+              </el-carousel-item>
+              <el-carousel-item>
+                <img class="mx-auto w-full object-contain" src="~@/assets/feature-img2.png" alt="">
+              </el-carousel-item>
+              <el-carousel-item>
+                <img class="mx-auto w-full object-contain" src="~@/assets/feature-img3.png" alt="">
               </el-carousel-item>
             </el-carousel>
             <div class="flex items-center justify-center gap-x-20px py-20px">
