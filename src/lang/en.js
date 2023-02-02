@@ -64,12 +64,14 @@ export default {
     application: 'Application',
     scenario: 'Scenario',
     section3P1: 'Anyone can use Wormhole3 to configure the curation protocol for their tweets, create a curation market, and use cryptocurrencies to reward their community members for their social promotion contributions.',
+    section3P2: 'During Space,\n ① Twitter Space creators can reward their Space promoters with cryptocurrencies,\n ② Speakers can airdrop cryptocurrencies to Space participants by creating flash red envelopes,\n ③ Participants can also reward Speakers Cryptocurrency to show appreciation for its content.',
+    section3P3: 'Anyone can issue tokens for their account, Use the Curation Protocol to distribute tokens to the curator who publishes each tweet/twitter space of the Account, and reward its behaviors such as quote, reply, like, follow and etc.',
     applicationScenario: 'Application Scenario'
   },
   about: {
     section1P1: 'Link Community\n to Web3',
     section1P2: 'Our Mission',
-    section1P3: '人人能发起DAO，并实现其冷启动！任何微小个体能够通过Web3加入到一个自由的、多边的全球市场。',
+    section1P3: 'Everyone can start a  DAO and bootstrap it! Any individual can join a free and multilateral global market through Web3.',
     our: 'Our',
     history: 'History',
     t1: 'In Q4 of 2017',

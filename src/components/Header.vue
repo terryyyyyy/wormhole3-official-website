@@ -7,50 +7,86 @@
       <router-link to="/wormhole"  v-slot="{ isActive }">
         <span :class="isActive?'':'text-white/50 hover:text-white'">{{$t('wormhole3')}}</span>
       </router-link>
-      <router-link to="/"  v-slot="{ isActive }">
-        <span :class="isActive?'':'text-white/50 hover:text-white'">{{$t('howToPlay')}}</span>
-      </router-link>
       <router-link to="/about"  v-slot="{ isActive }">
         <span :class="isActive?'':'text-white/50 hover:text-white'">{{$t('aboutUs')}}</span>
       </router-link>
-      <router-link to="/"  v-slot="{ isActive }">
-        <span :class="isActive?'':'text-white/50 hover:text-white'">{{$t('wiki')}}</span>
-      </router-link>
+      <a href="https://nutbox.gitbook.io/wh3-cn/" target="_blank"
+         class="text-white/50 hover:text-white">
+        {{$t('wiki')}}
+      </a>
+      <el-popover placement="bottom" ref="langPopoverRef"
+                  :width="120"
+                  transition="el-zoom-in-top"
+                  trigger="click"
+                  popper-class="c-popper">
+        <template #reference>
+          <button class="text-white/50 hover:text-white">{{$t('lang')}}</button>
+        </template>
+        <div class="px-12px py-8px border-1 border-white/30 bg-black rounded-20px flex flex-col items-start">
+          <button class="h-46px min-h-46px hover:text-white w-full" @click="setLang('zh')">简体中文</button>
+          <button class="h-46px min-h-46px hover:text-white w-full" @click="setLang('en')">English</button>
+        </div>
+      </el-popover>
     </div>
     <div class="relative md:hidden">
-      <button @click.stop="showMenu=!showMenu">
-        <img class="w-30px h-30px transform rotate-y-180"
-             src="~@/assets/icon-menu-toggle.svg" alt="">
-      </button>
-      <div class="menu-box w-150px 2xl:w-10rem z-99" @click.stop
-           :class="showMenu?'active':''">
+      <el-popover placement="bottom-end" ref="menuPopoverRef"
+                  :width="140"
+                  transition="el-zoom-in-top"
+                  trigger="click"
+                  popper-class="c-popper">
+        <template #reference>
+          <button>
+            <img class="w-30px h-30px transform rotate-y-180"
+                 src="~@/assets/icon-menu-toggle.svg" alt="">
+          </button>
+        </template>
         <div class="px-12px py-8px border-1 border-white/30 bg-black rounded-20px">
-          <router-link to="/wormhole" @click.stop="showMenu=false"  v-slot="{ isActive }"
+          <router-link to="/wormhole" @click.stop="$refs.menuPopoverRef.hide()"  v-slot="{ isActive }"
                        class="h-46px min-h-46px flex-1 flex justify-between items-center cursor-pointer">
-            <span :class="isActive?'':'text-white/50 hover:text-white'">{{$t('wormhole3')}}</span>
+            <span :class="isActive?'text-white':'text-white/50 hover:text-white'">{{$t('wormhole3')}}</span>
           </router-link>
-          <router-link to="/" @click.stop="showMenu=false"  v-slot="{ isActive }"
+          <router-link to="/about" @click.stop="$refs.menuPopoverRef.hide()"  v-slot="{ isActive }"
                        class="h-46px min-h-46px flex-1 flex justify-between items-center cursor-pointer">
-            <span :class="isActive?'':'text-white/50 hover:text-white'">{{$t('howToPlay')}}</span>
+            <span :class="isActive?'text-white':'text-white/50 hover:text-white'">{{$t('aboutUs')}}</span>
           </router-link>
-          <router-link to="/about" @click.stop="showMenu=false"  v-slot="{ isActive }"
-                       class="h-46px min-h-46px flex-1 flex justify-between items-center cursor-pointer">
-            <span :class="isActive?'':'text-white/50 hover:text-white'">{{$t('aboutUs')}}</span>
-          </router-link>
-          <router-link to="/" @click.stop="showMenu=false"  v-slot="{ isActive }"
-                       class="h-46px min-h-46px flex-1 flex justify-between items-center cursor-pointer">
-            <span :class="isActive?'':'text-white/50 hover:text-white'">{{$t('wiki')}}</span>
-          </router-link>
+          <a href="https://nutbox.gitbook.io/wh3-cn/" target="_blank"  @click.stop="$refs.menuPopoverRef.hide()"
+             class="h-46px min-h-46px flex-1 flex justify-between items-center cursor-pointer
+                    text-white/50 hover:text-white">
+            {{$t('wiki')}}
+          </a>
+          <el-popover placement="left" ref="langPopoverRef"
+                      :width="120"
+                      transition="el-zoom-in-top"
+                      trigger="click"
+                      popper-class="c-popper">
+            <template #reference>
+              <button class="text-white/50 hover:text-white h-46px min-h-46px flex-1 flex justify-between items-center">
+                {{$t('lang')}}
+              </button>
+            </template>
+            <div class="px-12px py-8px border-1 border-white/30 bg-black rounded-20px flex flex-col items-start">
+              <button class="h-46px min-h-46px hover:text-white w-full" @click="setLang('zh')">简体中文</button>
+              <button class="h-46px min-h-46px hover:text-white w-full" @click="setLang('en')">English</button>
+            </div>
+          </el-popover>
         </div>
-      </div>
+      </el-popover>
     </div>
   </div>
 </template>
 
 <script setup>
 import {ref} from "vue";
+import i18n from "@/lang";
 
-const showMenu = ref(false)
+const menuPopoverRef = ref()
+const langPopoverRef = ref()
+const setLang = (lang) => {
+  menuPopoverRef.value.hide()
+  langPopoverRef.value.hide()
+  i18n.global.locale = lang
+  localStorage.setItem('language', lang)
+}
 </script>
 
 <style scoped>

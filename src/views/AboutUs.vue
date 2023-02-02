@@ -16,7 +16,7 @@
         </div>
       </div>
     </div>
-    <div class="max-w-1440px mx-auto relative section2 py-4rem">
+    <div class="max-w-1440px mx-auto relative section2 py-4rem sm:mt-4rem">
       <div class="max-w-1080px px-15px sm:px-2rem mx-auto">
         <div class="w-full md:w-2/3 xl:w-3/4 text-left">
           <div class="text-30px md:text-40px lg:text-50px xl:text-60px mb-30px mg:mb-60px
@@ -47,7 +47,7 @@
         </div>
       </div>
     </div>
-    <div class="max-w-1080px px-15px sm:px-2rem mx-auto py-4rem mt-4rem">
+    <div class="max-w-1080px px-15px sm:px-2rem mx-auto py-4rem sm:mt-4rem">
       <div class="text-30px md:text-40px lg:text-50px xl:text-60px mb-30px mg:mb-60px
                         font-MonsterratMedium text-center">
         {{$t('about.section3P1')}}

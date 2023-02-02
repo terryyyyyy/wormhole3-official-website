@@ -6,8 +6,8 @@
         <div class="text-34px leading-34px xs:text-34px sm:text-48px sm:leading-48px
                   md:text-60px md:leading-60px lg:text-78px lg:leading-78px
                   font-MonsterratMedium">{{$t('home.section1P1')}}</div>
-        <div class="max-w-660px mt-32px font-MonsterratLight opacity-50">{{$t('home.section1P2')}}</div>
-        <div class="max-w-660px mt-24px font-MonsterratLight opacity-50">{{$t('home.section1P3')}}</div>
+        <div class="max-w-660px mt-32px font-MonsterratLight opacity-50 leading-20px">{{$t('home.section1P2')}}</div>
+        <div class="max-w-660px mt-24px font-MonsterratLight opacity-50 leading-20px">{{$t('home.section1P3')}}</div>
       </div>
       <div class="mt-54px flex gap-24px">
         <button class="h-40px rounded-full px-20px bg-white text-black min-w-136px">{{$t('home.getStart')}}</button>
@@ -25,7 +25,7 @@
               <div class="flex">
                 <div class="border-t-1 border-primaryColor font-MonsterratBlack text-20px py-20px min-w-60px"
                      :class="carouselIndex===0?'text-primaryColor':'text-white'">01</div>
-                <div class="border-t-1 border-white/50 ml-10px py-20px text-12px xs:text-16px leading-20px"
+                <div class="border-t-1 border-white/50 ml-10px py-20px text-12px leading-18px xs:text-16px xs:leading-24px"
                      :class="carouselIndex===0?'text-primaryColor':'text-white'">
                   {{$t('home.section2P1')}}
                 </div>
@@ -33,7 +33,7 @@
               <div class="flex">
                 <div class="border-t-1 border-primaryColor font-MonsterratBlack text-20px py-20px min-w-60px"
                      :class="carouselIndex===1?'text-primaryColor':'text-white'">02</div>
-                <div class="border-t-1 border-white/50 ml-10px py-20px text-12px xs:text-16px leading-20px"
+                <div class="border-t-1 border-white/50 ml-10px py-20px text-12px leading-18px xs:text-16px xs:leading-24px"
                      :class="carouselIndex===1?'text-primaryColor':'text-white'">
                   {{$t('home.section2P2')}}
                 </div>
@@ -41,7 +41,7 @@
               <div class="flex">
                 <div class="border-t-1 border-primaryColor font-MonsterratBlack text-20px py-20px min-w-60px"
                      :class="carouselIndex===2?'text-primaryColor':'text-white'">03</div>
-                <div class="border-t-1 border-white/50 ml-10px py-20px text-12px xs:text-16px leading-20px"
+                <div class="border-t-1 border-white/50 ml-10px py-20px text-12px leading-18px xs:text-16px xs:leading-24px"
                      :class="carouselIndex===2?'text-primaryColor':'text-white'">
                   {{$t('home.section2P3')}}
                 </div>
@@ -90,7 +90,7 @@
             <div class="text-36px md:text-48px lg:text-56px lg:leading-68px font-MonsterratMedium">
               {{$t('home.section3P1')}}
             </div>
-            <div class="text-12px sm:text-16px sm:leading-24px mt-20px md:mt-32px">
+            <div class="text-12px leading-20px sm:text-16px sm:leading-24px mt-20px md:mt-32px">
               {{$t('home.section3P2')}}
             </div>
             <div class="">
@@ -113,7 +113,7 @@
             <div class="text-36px md:text-48px lg:text-56px lg:leading-68px font-MonsterratMedium">
               {{$t('home.section4P1')}}
             </div>
-            <div class="text-12px sm:text-16px sm:leading-24px mt-20px md:mt-32px">
+            <div class="text-12px leading-20px sm:text-16px sm:leading-24px mt-20px md:mt-32px">
               {{$t('home.section4P2')}}
             </div>
             <div class="text-right">
@@ -130,7 +130,7 @@
             <div class="text-36px md:text-48px lg:text-56px lg:leading-68px font-MonsterratMedium">
               {{$t('home.section5P1')}}
             </div>
-            <div class="text-12px sm:text-16px sm:leading-24px mt-20px md:mt-32px">
+            <div class="text-12px leading-20px sm:text-16px sm:leading-24px mt-20px md:mt-32px">
               {{$t('home.section5P2')}}
             </div>
             <div class="">
@@ -149,7 +149,7 @@
           {{$t('roadmap.roadmap')}}
         </div>
         <div class="w-full overflow-x-auto overflow-y-hidden no-scroll-bar mt-2rem md:mt-8rem">
-          <div class="w-max">
+          <div class="w-max roadmap-container">
             <div class="flex items-end mt-10px">
               <div class="w-180px min-w-180px max-w-180px pl-10px border-l-1 border-white/30 relative mr-100px ml-5px roadmap-item">
                 <span class="absolute -left-4px top-0 w-8px min-w-8px h-8px min-h-8px rounded-full bg-colorE3 circle"></span>
@@ -282,6 +282,12 @@ onUnmounted(() => {
   background-position: center bottom;
   background-size: 100% auto;
 }
+.roadmap-container {
+  animation: move-scroll 12s linear infinite;
+}
+.roadmap-container:hover {
+  animation-play-state: paused;
+}
 .roadmap-item {
   cursor: pointer;
 }
@@ -293,5 +299,31 @@ onUnmounted(() => {
 }
 .roadmap-item:hover .time {
   color: #8534F2;
+}
+@keyframes move-scroll {
+  0%
+  {
+    opacity:0;
+  }
+  1%
+  {
+    opacity:1;
+    transform:translateX(20%);
+  }
+  90%
+  {
+    opacity:1;
+    transform:translateX(-60%);
+  }
+  98%
+  {
+    opacity: 0;
+    transform:translateX(-65%);
+  }
+  100%
+  {
+    opacity:0;
+    left: 0;
+  }
 }
 </style>

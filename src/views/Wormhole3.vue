@@ -2,11 +2,13 @@
   <div>
     <div class="flex flex-col justify-center items-center section1 pt-8rem pb-3rem max-w-1440px mx-auto
                 xs:min-h-600px lg:min-h-800px relative overflow-hidden">
-      <img class="absolute h-110/100 -top-5/100 xs:h-130/100 xs:-top-10/100 object-cover -right-5/100 xl:right-0 z-0"
+      <img class="absolute h-110/100 -top-5/100
+                  sm:h-130/100 xs:-top-10/100 object-contain xs:object-cover
+                  -right-5/100 xl:right-0 z-0"
            src="~@/assets/wormhole-bg1.png" alt="">
       <div class="max-w-1080px px-15px sm:px-2rem mx-auto z-1">
         <div class="whitespace-pre-line">
-          <div class="text-34px leading-34px xs:text-34px sm:text-48px sm:leading-48px
+          <div class="text-34px leading-44px xs:text-34px sm:text-48px sm:leading-48px
                   md:text-60px md:leading-60px lg:text-78px lg:leading-78px
                   font-MonsterratMedium">{{$t('wormhole.section1P1')}}</div>
           <div class="max-w-660px mt-32px font-MonsterratLight opacity-50">{{$t('wormhole.section1P2')}}</div>
@@ -17,7 +19,7 @@
         </div>
       </div>
     </div>
-    <div class="max-w-1080px px-15px sm:px-2rem mx-auto pt-4rem">
+    <div class="max-w-1080px px-15px sm:px-2rem mx-auto sm:pt-4rem">
       <div class="section2">
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-30px
                     mt-60px max-w-524px sm:max-w-full mx-auto section2-content">
@@ -48,25 +50,25 @@
                 <div class="border-t-1 border-primaryColor font-MonsterratBlack text-20px py-20px min-w-60px cursor-pointer"
                      :class="carouselIndex===0?'text-primaryColor':'text-white'"
                      @click="setCarouselIndex(0)">01</div>
-                <div class="border-t-1 border-white/50 mr-10px py-20px text-12px xs:text-16px leading-20px"
+                <div class="border-t-1 border-white/50 mr-10px py-20px text-12px leading-18px xs:text-16px xs:leading-20px"
                      :class="carouselIndex===0?'text-primaryColor':'text-white'">
                   {{$t('wormhole.section2P1')}}
                 </div>
               </div>
               <div class="flex flex-row-reverse">
-                <div class="border-t-1 border-primaryColor font-MonsterratBlack text-20px py-20px min-w-60px"
+                <div class="border-t-1 border-primaryColor font-MonsterratBlack text-20px py-20px min-w-60px cursor-pointer"
                      :class="carouselIndex===1?'text-primaryColor':'text-white'"
                      @click="setCarouselIndex(1)">02</div>
-                <div class="border-t-1 border-white/50 mr-10px py-20px text-12px xs:text-16px leading-20px"
+                <div class="border-t-1 border-white/50 mr-10px py-20px text-12px leading-18px xs:text-16px xs:leading-20px"
                      :class="carouselIndex===1?'text-primaryColor':'text-white'">
                   {{$t('wormhole.section2P2')}}
                 </div>
               </div>
               <div class="flex flex-row-reverse">
-                <div class="border-t-1 border-primaryColor font-MonsterratBlack text-20px py-20px min-w-60px"
+                <div class="border-t-1 border-primaryColor font-MonsterratBlack text-20px py-20px min-w-60px cursor-pointer"
                      :class="carouselIndex===2?'text-primaryColor':'text-white'"
                      @click="setCarouselIndex(2)">03</div>
-                <div class="border-t-1 border-white/50 mr-10px py-20px text-12px xs:text-16px leading-20px"
+                <div class="border-t-1 border-white/50 mr-10px py-20px text-12px leading-18px xs:text-16px xs:leading-20px"
                      :class="carouselIndex===2?'text-primaryColor':'text-white'">
                   {{$t('wormhole.section2P3')}}
                 </div>
@@ -77,7 +79,7 @@
       </div>
 
     </div>
-    <div class="md:mt-6rem">
+    <div class="mt-4rem sm:mt-6rem">
       <div class="max-w-1080px px-15px sm:px-2rem mx-auto relative">
         <div class="text-34px leading-34px xs:text-34px sm:text-48px sm:leading-48px
                   md:text-60px md:leading-60px font-MonsterratMedium">
@@ -88,9 +90,15 @@
           {{$t('wormhole.scenario')}}
         </div>
         <div class="flex flex-col md:flex-row items-start md:items-center my-32px gap-36px">
-          <div class="flex-1 font-MonsterratLight text-12px leading-16px">
-            <div class="max-w-400px">
+          <div class="flex-1 font-MonsterratLight text-12px leading-16px sm:min-h-120px flex items-center">
+            <div v-if="appCarouselIndex===0" class="max-w-400px whitespace-pre-line">
               {{$t('wormhole.section3P1')}}
+            </div>
+            <div v-if="appCarouselIndex===1" class="max-w-400px whitespace-pre-line">
+              {{$t('wormhole.section3P2')}}
+            </div>
+            <div v-if="appCarouselIndex===2" class="max-w-400px whitespace-pre-line">
+              {{$t('wormhole.section3P3')}}
             </div>
           </div>
           <div class="flex-1 flex items-center justify-end gap-16px sm:gap-56px">
@@ -117,15 +125,35 @@
       </div>
       <div class="xl:max-w-1280px xl:mx-auto pl-15px sm:pl-2rem" :style="{marginLeft: marginLeft}">
         <div class="overflow-hidden">
-          <div class="flex gap-2.5rem no-scroll-bar c-carousel pr-15px sm:pr-2rem" ref="appCarouselRef"
-               @scroll="appScroll">
-            <img class="h-380px object-contain object-top c-carousel-item" src="~@/assets/application-img1.png" alt="">
-            <img class="h-380px object-contain object-top c-carousel-item" src="~@/assets/application-img2.png" alt="">
-            <img class="h-380px object-contain object-top c-carousel-item" src="~@/assets/application-img3.png" alt="">
+          <div class="flex gap-30px no-scroll-bar c-carousel pr-15px sm:pr-2rem" ref="appCarouselRef">
+            <div class="c-carousel-item w-full min-w-full sm:w-680px sm:max-w-680px sm:min-w-680px">
+              <img class="w-full object-contain object-top" src="~@/assets/application-img1.png" alt="">
+            </div>
+            <div class="c-carousel-item w-full min-w-full sm:w-680px sm:max-w-680px sm:min-w-680px">
+              <img class="w-full object-contain object-top" src="~@/assets/application-img2.png" alt="">
+            </div>
+            <div class="c-carousel-item w-full min-w-full sm:w-680px sm:max-w-680px sm:min-w-680px">
+              <img class="w-full object-contain object-top" src="~@/assets/application-img3.png" alt="">
+            </div>
           </div>
         </div>
       </div>
       <div class="max-w-1080px px-15px sm:px-2rem mx-auto relative pb-6rem">
+<!--        <el-carousel indicator-position="none"-->
+<!--                     :interval="3500" arrow="never" :autoplay="true" type="card"-->
+<!--                     :initial-index="carouselIndex"-->
+<!--                     ref="highlightCarouselRef"-->
+<!--                     @change="carouselChange">-->
+<!--          <el-carousel-item>-->
+<!--            <img class="h-full object-contain mx-auto " src="~@/assets/application-img1.png" alt="">-->
+<!--          </el-carousel-item>-->
+<!--          <el-carousel-item>-->
+<!--            <img class="h-full object-contain mx-auto " src="~@/assets/application-img2.png" alt="">-->
+<!--          </el-carousel-item>-->
+<!--          <el-carousel-item>-->
+<!--            <img class="h-full object-contain mx-auto " src="~@/assets/application-img3.png" alt="">-->
+<!--          </el-carousel-item>-->
+<!--        </el-carousel>-->
         <div class="flex items-center justify-center gap-x-20px py-20px">
           <button class="disabled:opacity-50" :disabled="appCarouselIndex===0"
                   @click="setAppCarouselIndex(appCarouselIndex-=1)">
@@ -142,7 +170,7 @@
 </template>
 
 <script setup>
-import {onMounted, onUnmounted, ref} from "vue";
+import {onMounted, onUnmounted, ref, watch} from "vue";
 
 const carouselIndex = ref(0)
 const carouselChange = (index) => {
@@ -154,14 +182,26 @@ const setCarouselIndex = (index) => {
 }
 const appCarouselIndex = ref(0)
 const appCarouselRef = ref()
+const appCarouselItemWidth = ref(300)
 const setAppCarouselIndex = (index) => {
   appCarouselIndex.value = index
-  console.log(appCarouselRef.value.scrollLeft)
-  appCarouselRef.value.scrollLeft = index * 730
+  appCarouselRef.value.scrollLeft = index * appCarouselItemWidth.value
 }
-const appScroll = () => {
-  appCarouselIndex.value = Math.ceil(appCarouselRef.value.scrollLeft/730)
+
+const timer = ref(null)
+const setAutoPlay = () => {
+  timer.value = setInterval(() => {
+    if(appCarouselIndex.value ===2) {
+      appCarouselRef.value.scrollLeft = 0
+      appCarouselIndex.value = 0
+      return
+    }
+    appCarouselIndex.value += 1
+    appCarouselRef.value.scrollLeft = appCarouselIndex.value * appCarouselItemWidth.value
+
+  }, 4000)
 }
+
 const carouselHeight = ref('360px')
 const marginLeft = ref('0px')
 onMounted(() => {
@@ -177,10 +217,14 @@ onMounted(() => {
     if(screenWidth<524) carouselHeight.value = screenWidth - 140 + 'px'
     else if(screenWidth>1080) carouselHeight.value = '450px'
     else carouselHeight.value = '360px'
+    appCarouselItemWidth.value = document.getElementsByClassName('c-carousel-item')[0].clientWidth
   });
+  appCarouselItemWidth.value = document.getElementsByClassName('c-carousel-item')[0].clientWidth
+  // setAutoPlay()
 })
 onUnmounted(() => {
   window.removeEventListener('resize',() => {})
+  clearInterval(timer.value)
 })
 </script>
 
