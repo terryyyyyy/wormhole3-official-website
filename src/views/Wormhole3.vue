@@ -14,8 +14,8 @@
           <div class="max-w-660px mt-32px font-MonsterratLight opacity-50">{{$t('wormhole.section1P2')}}</div>
         </div>
         <div class="mt-54px flex gap-24px">
-          <button class="h-40px rounded-full px-20px bg-white text-black min-w-136px">{{$t('home.getStart')}}</button>
-          <button class="border-2 border-white rounded-full px-20px min-w-136px">{{$t('home.join')}}</button>
+          <button class="h-40px rounded-full px-20px bg-white text-black min-w-136px" @click="gotoWormhole">{{$t('home.getStart')}}</button>
+          <button class="border-2 border-white rounded-full px-20px min-w-136px" @click="gotoDC">{{$t('home.join')}}</button>
         </div>
       </div>
     </div>
@@ -204,6 +204,12 @@ const setAutoPlay = () => {
 
 const carouselHeight = ref('360px')
 const marginLeft = ref('0px')
+const gotoWormhole = () => {
+  window.open('https://alpha.wormhole3.io', '__blank')
+}
+const gotoDC = () => {
+  window.open('https://discord.gg/6QbcvSEDWF', '__blank')
+}
 onMounted(() => {
   const screenWidth = document.body.offsetWidth
   if(screenWidth>1080) marginLeft.value = (screenWidth-1080)/2 + 'px'

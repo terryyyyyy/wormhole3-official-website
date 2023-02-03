@@ -10,8 +10,8 @@
         <div class="max-w-660px mt-24px font-MonsterratLight opacity-50 leading-20px">{{$t('home.section1P3')}}</div>
       </div>
       <div class="mt-54px flex gap-24px">
-        <button class="h-40px rounded-full px-20px bg-white text-black min-w-136px">{{$t('home.getStart')}}</button>
-        <button class="border-2 border-white rounded-full px-20px min-w-136px">{{$t('home.join')}}</button>
+        <button class="h-40px rounded-full px-20px bg-white text-black min-w-136px" @click="gotoWormhole">{{$t('home.getStart')}}</button>
+        <button class="border-2 border-white rounded-full px-20px min-w-136px" @click="gotoDC">{{$t('home.join')}}</button>
       </div>
     </div>
     <div class="max-w-1080px px-15px sm:px-2rem mx-auto pt-4rem">
@@ -84,7 +84,7 @@
               {{$t('home.section3P2')}}
             </div>
             <div class="">
-              <button class="mt-20px">
+              <button class="mt-20px" @click="gotoWormhole">
                 <img class="h-36px md:h-2.6rem" src="~@/assets/icon-link-primary.svg" alt="">
               </button>
             </div>
@@ -107,7 +107,7 @@
               {{$t('home.section4P2')}}
             </div>
             <div class="text-right">
-              <button class="mt-20px">
+              <button class="mt-20px" @click="gotoWormhole">
                 <img class="h-36px md:h-2.6rem" src="~@/assets/icon-link-primary.svg" alt="">
               </button>
             </div>
@@ -124,7 +124,7 @@
               {{$t('home.section5P2')}}
             </div>
             <div class="">
-              <button class="mt-20px">
+              <button class="mt-20px" @click="gotoWormhole">
                 <img class="h-36px md:h-2.6rem" src="~@/assets/icon-link-primary.svg" alt="">
               </button>
             </div>
@@ -232,6 +232,12 @@ const carouselChange = (index) => {
   carouselIndex.value = index
 }
 const carouselHeight = ref('500px')
+const gotoWormhole = () => {
+  window.open('https://alpha.wormhole3.io', '__blank')
+}
+const gotoDC = () => {
+  window.open('https://discord.gg/6QbcvSEDWF', '__blank')
+}
 onMounted(() => {
   const screenWidth = document.body.offsetWidth
   if(screenWidth<524) carouselHeight.value = screenWidth - 40 + 'px'

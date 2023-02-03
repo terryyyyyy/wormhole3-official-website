@@ -184,7 +184,7 @@
                         font-MonsterratMedium mt-24px mb-17px">
             {{$t('about.joinUs')}}
           </div>
-          <button class="bg-white rounded-full px-24px h-40px text-primaryColor">
+          <button class="bg-white rounded-full px-24px h-40px text-primaryColor" @click="joinUs">
             {{$t('about.joinUs')}}
           </button>
         </div>
@@ -194,6 +194,10 @@
 </template>
 
 <script setup>
+
+const joinUs = () => {
+  window.open('https://www.notion.so/coincidencelabs/How-to-join-as-a-contributor-7ceec379f1a8417587ee68372dfd1750', '__blank')
+}
 </script>
 
 <style scoped>
