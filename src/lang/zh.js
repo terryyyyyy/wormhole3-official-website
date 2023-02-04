@@ -9,7 +9,7 @@ export default {
     section1P2: '通过The Base构建的社交数据可用层进入Web3，使用Web2身份和声誉赚取加密货币。',
     section1P3: '无Chrome插件，无gas费。您可以像往常一样从Twitter App进入Web3',
     getStart: '开始',
-    join: 'Join Discord',
+    join: '加入 Discord',
     feature: 'FEATURE',
     section2P1: '无需安装插件钱包，无需支付gas fee，Web2用户轻松将Web2社交数据结构化上链',
     section2P2: '聚合用户的Web2身份、Social graph、NFT、Token stake，形成动态权重系统',
@@ -49,8 +49,8 @@ export default {
     partner: '合作伙伴'
   },
   wormhole: {
-    section1P1: 'Build your influence with a decentralized curation protocol',
-    section1P2: 'Quote, reply, like, and attend to earn easily on Web2 platforms through a decentralized curation platform',
+    section1P1: '通过去中心化的策展协议建立你的影响力',
+    section1P2: '无 Chrome 插件，无 gas 费，重新定义内容分发网络',
     highlight: 'Highlight',
     section2P1: '使用策展协议构建去中心化内容分发网络',
     section2P2: '围绕协议而不是平台形成一个自由、多边的策展市场',
@@ -63,8 +63,8 @@ export default {
     applicationScenario: '应用场景'
   },
   about: {
-    section1P1: 'Link Community to Web3',
-    section1P2: 'Our Mission',
+    section1P1: 'Link Community\n to Web3',
+    section1P2: '我们的使命',
     section1P3: '人人能发起DAO，并实现其冷启动！任何微小个体能够通过Web3加入到一个自由的、多边的全球市场。',
     our: '我们的',
     history: '历史',
@@ -93,7 +93,7 @@ export default {
     grant2: 'Moonbeam',
     grant3: 'Astar grant',
     grant4: 'Wanxiang Blockchain Fall Hackathon-2022',
-    joinP1: 'A stage for tiny individuals to magnify in the Web3 world',
+    joinP1: '一个让每一个微小的个体都能在在Web3世界中大放异彩的舞台',
     joinUs: '加入我们'
   }
 }

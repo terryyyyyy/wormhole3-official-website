@@ -7,10 +7,10 @@
           <div class="text-34px leading-34px xs:text-34px sm:text-48px sm:leading-48px
                   md:text-60px md:leading-60px lg:text-78px lg:leading-78px
                   font-MonsterratMedium">{{$t('about.section1P1')}}</div>
-          <div class="max-w-660px mt-32px font-MonsterratLight opacity-50 text-24px">
+          <div class="max-w-660px mx-auto mt-32px font-MonsterratLight opacity-50 text-24px">
             {{$t('about.section1P2')}}
           </div>
-          <div class="max-w-660px mt-14px font-MonsterratLight opacity-50 text-12px leading-18px md:text-16px md:leading-22px">
+          <div class="max-w-660px mx-auto mt-14px font-MonsterratLight opacity-50 text-12px leading-18px md:text-16px md:leading-22px">
             {{$t('about.section1P3')}}
           </div>
         </div>

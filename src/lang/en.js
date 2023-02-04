@@ -50,7 +50,7 @@ export default {
   },
   wormhole: {
     section1P1: 'Build your influence with a decentralized curation protocol',
-    section1P2: 'Quote, reply, like, and attend to earn easily on Web2 platforms through a decentralized curation platform',
+    section1P2: 'Redefine content distribution network with No Chrome plug-in and No gas fee',
     highlight: 'Highlight',
     section2P1: 'Use the curation protocol to build a decentralized content distribution network',
     section2P2: 'Build a free and multilateral curation market around protocols rather than platforms',
