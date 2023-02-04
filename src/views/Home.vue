@@ -6,8 +6,12 @@
         <div class="text-34px leading-34px xs:text-34px sm:text-48px sm:leading-48px
                   md:text-60px md:leading-60px lg:text-78px lg:leading-78px
                   font-MonsterratMedium">{{$t('home.section1P1')}}</div>
-        <div class="max-w-660px mt-32px font-MonsterratLight opacity-50 leading-20px">{{$t('home.section1P2')}}</div>
-        <div class="max-w-660px mt-24px font-MonsterratLight opacity-50 leading-20px">{{$t('home.section1P3')}}</div>
+        <div class="max-w-660px mx-auto mt-32px font-MonsterratLight opacity-50 leading-20px">
+          {{$t('home.section1P2')}}
+        </div>
+        <div class="max-w-660px mx-auto mt-24px font-MonsterratLight opacity-50 leading-20px">
+          {{$t('home.section1P3')}}
+        </div>
       </div>
       <div class="mt-54px flex gap-24px">
         <button class="h-40px rounded-full px-20px bg-white text-black min-w-136px" @click="gotoWormhole">{{$t('home.getStart')}}</button>

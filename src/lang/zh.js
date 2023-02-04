@@ -5,7 +5,7 @@ export default {
   aboutUs: '关于我们',
   wiki: 'WiKi',
   home: {
-    section1P1: '一个连接Web2到Web3的虫洞！',
+    section1P1: '一个连接Web2到\nWeb3的虫洞！',
     section1P2: '通过The Base构建的社交数据可用层进入Web3，使用Web2身份和声誉赚取加密货币。',
     section1P3: '无Chrome插件，无gas费。您可以像往常一样从Twitter App进入Web3',
     getStart: '开始',
