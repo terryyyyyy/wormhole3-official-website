@@ -6,10 +6,10 @@
                   sm:h-130/100 xs:-top-10/100 object-contain xs:object-cover
                   -right-5/100 xl:right-0 z-0"
            src="~@/assets/wormhole-bg1.png" alt="">
-      <div class="max-w-1080px px-15px sm:px-2rem mx-auto z-1">
+      <div class="max-w-1080px w-full px-15px sm:px-2rem mx-auto z-1">
         <div class="whitespace-pre-line">
-          <div class="text-34px leading-44px xs:text-34px sm:text-48px sm:leading-48px
-                  md:text-60px md:leading-60px lg:text-78px lg:leading-78px
+          <div class="text-28px leading-34px sm:text-44px sm:leading-50px
+                  md:text-54px md:leading-60px lg:text-72px lg:leading-76px
                   font-MonsterratMedium">{{$t('wormhole.section1P1')}}</div>
           <div class="max-w-660px mt-32px font-MonsterratLight opacity-50">{{$t('wormhole.section1P2')}}</div>
         </div>
@@ -46,28 +46,25 @@
               {{$t('wormhole.highlight')}}
             </div>
             <div class="text-right">
-              <div class="flex flex-row-reverse">
-                <div class="border-t-1 border-primaryColor font-MonsterratBlack text-20px py-20px min-w-60px cursor-pointer"
-                     :class="carouselIndex===0?'text-primaryColor':'text-white'"
-                     @click="setCarouselIndex(0)">01</div>
+              <div class="flex flex-row-reverse cursor-pointer" @click="setCarouselIndex(0)">
+                <div class="border-t-1 border-primaryColor font-MonsterratBlack text-20px py-20px min-w-60px"
+                     :class="carouselIndex===0?'text-primaryColor':'text-white'">01</div>
                 <div class="border-t-1 border-white/50 mr-10px py-20px text-12px leading-18px xs:text-16px xs:leading-20px"
                      :class="carouselIndex===0?'text-primaryColor':'text-white'">
                   {{$t('wormhole.section2P1')}}
                 </div>
               </div>
-              <div class="flex flex-row-reverse">
-                <div class="border-t-1 border-primaryColor font-MonsterratBlack text-20px py-20px min-w-60px cursor-pointer"
-                     :class="carouselIndex===1?'text-primaryColor':'text-white'"
-                     @click="setCarouselIndex(1)">02</div>
+              <div class="flex flex-row-reverse cursor-pointer" @click="setCarouselIndex(1)">
+                <div class="border-t-1 border-primaryColor font-MonsterratBlack text-20px py-20px min-w-60px"
+                     :class="carouselIndex===1?'text-primaryColor':'text-white'">02</div>
                 <div class="border-t-1 border-white/50 mr-10px py-20px text-12px leading-18px xs:text-16px xs:leading-20px"
                      :class="carouselIndex===1?'text-primaryColor':'text-white'">
                   {{$t('wormhole.section2P2')}}
                 </div>
               </div>
-              <div class="flex flex-row-reverse">
-                <div class="border-t-1 border-primaryColor font-MonsterratBlack text-20px py-20px min-w-60px cursor-pointer"
-                     :class="carouselIndex===2?'text-primaryColor':'text-white'"
-                     @click="setCarouselIndex(2)">03</div>
+              <div class="flex flex-row-reverse cursor-pointer" @click="setCarouselIndex(2)">
+                <div class="border-t-1 border-primaryColor font-MonsterratBlack text-20px py-20px min-w-60px"
+                     :class="carouselIndex===2?'text-primaryColor':'text-white'">03</div>
                 <div class="border-t-1 border-white/50 mr-10px py-20px text-12px leading-18px xs:text-16px xs:leading-20px"
                      :class="carouselIndex===2?'text-primaryColor':'text-white'">
                   {{$t('wormhole.section2P3')}}
@@ -90,7 +87,7 @@
           {{$t('wormhole.scenario')}}
         </div>
         <div class="flex flex-col md:flex-row items-start md:items-center my-32px gap-36px">
-          <div class="flex-1 font-MonsterratLight text-12px leading-16px sm:min-h-120px flex items-center">
+          <div class="flex-1 font-MonsterratLight text-14px leading-20px sm:min-h-120px flex items-center">
             <div v-if="appCarouselIndex===0" class="max-w-400px whitespace-pre-line">
               {{$t('wormhole.section3P1')}}
             </div>

@@ -56,6 +56,7 @@
             <el-carousel :height="carouselHeight" indicator-position="none"
                          :interval="3500" arrow="never" :autoplay="true"
                          :initial-index="carouselIndex"
+                         ref="featureCarouselRef"
                          @change="carouselChange">
               <el-carousel-item>
                 <img class="mx-auto w-full object-contain" src="~@/assets/feature-img1.png" alt="">
@@ -68,10 +69,14 @@
               </el-carousel-item>
             </el-carousel>
             <div class="flex items-center justify-center gap-x-20px py-20px">
-              <button class="disabled:opacity-50" :disabled="carouselIndex===0" @click="carouselIndex-=1">
+              <button class="disabled:opacity-50"
+                      :disabled="carouselIndex===0"
+                      @click="setCarouselIndex(carouselIndex-1)">
                 <img class="transform rotate-180 w-2.6rem h-2.6rem" src="~@/assets/icon-change-primary.svg" alt="">
               </button>
-              <button class="disabled:opacity-50" :disabled="carouselIndex===2" @click="carouselIndex+=1">
+              <button class="disabled:opacity-50"
+                      :disabled="carouselIndex===2"
+                      @click="setCarouselIndex(carouselIndex+1)">
                 <img class="w-2.6rem h-2.6rem" src="~@/assets/icon-change-primary.svg" alt="">
               </button>
             </div>
@@ -232,8 +237,13 @@
 import {onMounted, onUnmounted, ref} from "vue";
 
 const carouselIndex = ref(0)
+const featureCarouselRef = ref()
 const carouselChange = (index) => {
   carouselIndex.value = index
+}
+const setCarouselIndex = (index) => {
+  carouselIndex.value = index
+  featureCarouselRef.value.setActiveItem(index)
 }
 const carouselHeight = ref('500px')
 const gotoWormhole = () => {

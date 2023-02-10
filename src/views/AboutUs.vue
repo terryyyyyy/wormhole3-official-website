@@ -24,10 +24,10 @@
             {{$t('about.our')}}
             <span class="text-primaryColor">{{$t('about.history')}}</span>
           </div>
-          <div class="mb-36px">
-            <div class="text-20px leading-24px font-MonsterratBlack">{{$t('about.t1')}}</div>
-            <div class="text-12px leading-16px mt-12px opacity-50">{{$t('about.p1')}}</div>
-          </div>
+<!--          <div class="mb-36px">-->
+<!--            <div class="text-20px leading-24px font-MonsterratBlack">{{$t('about.t1')}}</div>-->
+<!--            <div class="text-12px leading-16px mt-12px opacity-50">{{$t('about.p1')}}</div>-->
+<!--          </div>-->
           <div class="mb-36px">
             <div class="text-20px leading-24px font-MonsterratBlack">{{$t('about.t2')}}</div>
             <div class="text-12px leading-16px mt-12px opacity-50">{{$t('about.p2')}}</div>
@@ -53,7 +53,7 @@
         {{$t('about.section3P1')}}
       </div>
       <div class="max-w-780px mx-auto mt-14px font-MonsterratLight opacity-50 text-12px leading-18px
-                  text-center md:text-16px md:leading-22px">
+                  text-center md:text-16px md:leading-22px sm:whitespace-pre-line">
         {{$t('about.section3P2')}}
       </div>
       <div class="py-2rem sm:py-5rem sm:pl-30px sm:pr-15px grid-box-bg mt-2rem sm:mt-4rem">
