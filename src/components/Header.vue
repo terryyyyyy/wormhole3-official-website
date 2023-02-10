@@ -14,7 +14,7 @@
          class="text-white/50 hover:text-white">
         {{$t('wiki')}}
       </a>
-      <el-popover placement="bottom" ref="langPopoverRef"
+      <el-popover placement="bottom" ref="langPopoverRefWeb"
                   :width="120"
                   transition="el-zoom-in-top"
                   trigger="click"
@@ -81,7 +81,9 @@ import i18n from "@/lang";
 
 const menuPopoverRef = ref()
 const langPopoverRef = ref()
+const langPopoverRefWeb = ref()
 const setLang = (lang) => {
+  langPopoverRefWeb.value.hide()
   menuPopoverRef.value.hide()
   langPopoverRef.value.hide()
   i18n.global.locale = lang
