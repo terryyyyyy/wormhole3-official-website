@@ -1,5 +1,5 @@
 <template>
-  <div class="text-3rem">404</div>
+  <div class="text-3rem text-center my-1/4">404</div>
 </template>
 
 <script>
