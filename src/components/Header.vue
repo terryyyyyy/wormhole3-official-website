@@ -4,9 +4,9 @@
       <img class="h-10" src="~@/assets/logo-header.svg" alt="">
     </router-link>
     <div class="hidden md:flex items-center gap-56px">
-      <router-link to="/wormhole"  v-slot="{ isActive }">
-        <span :class="isActive?'':'text-white/50 hover:text-white'">{{$t('wormhole3')}}</span>
-      </router-link>
+<!--      <router-link to="/wormhole"  v-slot="{ isActive }">-->
+<!--        <span :class="isActive?'':'text-white/50 hover:text-white'">{{$t('wormhole3')}}</span>-->
+<!--      </router-link>-->
       <router-link to="/about"  v-slot="{ isActive }">
         <span :class="isActive?'':'text-white/50 hover:text-white'">{{$t('aboutUs')}}</span>
       </router-link>

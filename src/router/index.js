@@ -7,12 +7,12 @@ import AboutUsPage from '@/views/AboutUs.vue'
 const routes = [
   {
     path: '/',
-    redirect: '/home'
+    redirect: '/wormhole'
   },
-  {
-    path: '/home',
-    component: HomePage
-  },
+  // {
+  //   path: '/home',
+  //   component: HomePage
+  // },
   {
     path: '/wormhole',
     component: WormholePage

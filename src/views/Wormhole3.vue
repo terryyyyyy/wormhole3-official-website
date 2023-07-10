@@ -1,24 +1,42 @@
 <template>
   <div>
-    <div class="flex flex-col justify-center items-center section1 pt-8rem pb-3rem max-w-1440px mx-auto
-                xs:min-h-600px lg:min-h-800px relative overflow-hidden">
-      <img class="absolute h-110/100 -top-5/100
-                  sm:h-130/100 xs:-top-10/100 object-contain xs:object-cover
-                  -right-5/100 xl:right-0 z-0"
-           src="~@/assets/wormhole-bg1.png" alt="">
-      <div class="max-w-1080px w-full px-15px sm:px-2rem mx-auto z-1">
-        <div class="whitespace-pre-line">
-          <div class="text-28px leading-34px sm:text-44px sm:leading-50px
-                  md:text-54px md:leading-60px lg:text-72px lg:leading-76px
-                  font-MonsterratMedium">{{$t('wormhole.section1P1')}}</div>
-          <div class="max-w-660px mt-32px font-MonsterratLight opacity-50">{{$t('wormhole.section1P2')}}</div>
+    <div class="flex flex-col justify-center items-center section1 pt-6rem lg:pt-6rem pb-3rem max-w-1440px mx-auto">
+      <img class="max-w-800px w-full xs:w-4/5 sm:w-7/10" src="~@/assets/home-img1.gif" alt="">
+      <div class="-mt-6rem xs:-mt-6rem sm:-mt-10rem md:-mt-12rem lg:-mt-13rem whitespace-pre-line text-center px-6">
+        <div class="text-34px leading-34px xs:text-34px sm:text-48px sm:leading-48px
+                  md:text-60px md:leading-60px lg:text-78px lg:leading-78px
+                  font-MonsterratMedium">{{$t('home.section1P1')}}</div>
+        <div class="max-w-660px mx-auto mt-32px font-MonsterratLight opacity-50 leading-20px">
+          {{$t('home.section1P2')}}
         </div>
-        <div class="mt-54px flex gap-24px">
-          <button class="h-40px rounded-full px-20px bg-white text-black min-w-136px" @click="gotoWormhole">{{$t('home.getStart')}}</button>
-          <button class="border-2 border-white rounded-full px-20px min-w-136px" @click="gotoDC">{{$t('home.join')}}</button>
+        <div class="max-w-660px mx-auto mt-24px font-MonsterratLight opacity-50 leading-20px">
+          {{$t('home.section1P3')}}
         </div>
       </div>
+      <div class="mt-54px flex gap-24px">
+        <button class="h-40px rounded-full px-20px bg-white text-black min-w-136px" @click="gotoWormhole">{{$t('home.getStart')}}</button>
+        <button class="border-2 border-white rounded-full px-20px min-w-136px" @click="gotoDC">{{$t('home.join')}}</button>
+      </div>
     </div>
+<!--    <div class="flex flex-col justify-center items-center section1 pt-8rem pb-3rem max-w-1440px mx-auto-->
+<!--                xs:min-h-600px lg:min-h-800px relative overflow-hidden">-->
+<!--      <img class="absolute h-110/100 -top-5/100-->
+<!--                  sm:h-130/100 xs:-top-10/100 object-contain xs:object-cover-->
+<!--                  -right-5/100 xl:right-0 z-0"-->
+<!--           src="~@/assets/wormhole-bg1.png" alt="">-->
+<!--      <div class="max-w-1080px w-full px-15px sm:px-2rem mx-auto z-1">-->
+<!--        <div class="whitespace-pre-line">-->
+<!--          <div class="text-28px leading-34px sm:text-44px sm:leading-50px-->
+<!--                  md:text-54px md:leading-60px lg:text-72px lg:leading-76px-->
+<!--                  font-MonsterratMedium">{{$t('wormhole.section1P1')}}</div>-->
+<!--          <div class="max-w-660px mt-32px font-MonsterratLight opacity-50">{{$t('wormhole.section1P2')}}</div>-->
+<!--        </div>-->
+<!--        <div class="mt-54px flex gap-24px">-->
+<!--          <button class="h-40px rounded-full px-20px bg-white text-black min-w-136px" @click="gotoWormhole">{{$t('home.getStart')}}</button>-->
+<!--          <button class="border-2 border-white rounded-full px-20px min-w-136px" @click="gotoDC">{{$t('home.join')}}</button>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
     <div class="max-w-1080px px-15px sm:px-2rem mx-auto sm:pt-4rem">
       <div class="section2">
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-30px
@@ -239,5 +257,24 @@ onUnmounted(() => {
 }
 .c-carousel-item {
   scroll-snap-align: start;
+}
+
+.section1 {
+  background-image: url("~@/assets/home-bg1.png"), url("~@/assets/home-bg2.png");
+  background-repeat: no-repeat;
+  background-position: left top, right bottom;
+  background-size: 70%, 60%;
+}
+@media (max-width: 500px) {
+  .section1 {
+    background-size: 100%, 80%;
+    background-position: left top, right 60%;
+  }
+}
+@media (min-width: 1080px) {
+  .section1 {
+    /*background-size: 70%, 60%;*/
+    background-position: 20% top, right 120%;
+  }
 }
 </style>

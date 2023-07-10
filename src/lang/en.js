@@ -6,8 +6,8 @@ export default {
   wiki: 'WiKi',
   home: {
     section1P1: 'A Wormhole From \n Web2 to Web3！',
-    section1P2: 'The social data availability layer built through The Base goes into Web3, earning cryptocurrency using Web2 identity and reputation.',
-    section1P3: 'No Chrome plug-in and No gas fee.You can enter Web3 from Twitter App as usual',
+    section1P2: 'Launch your decentralized community powered by a content curation protocol.',
+    section1P3: 'Tokenize the attention economy and redefine content distribution network.',
     getStart: 'Get started',
     join: 'Join Discord',
     feature: 'FEATURE',

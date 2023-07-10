@@ -6,8 +6,8 @@ export default {
   wiki: 'WiKi',
   home: {
     section1P1: '一个连接Web2到\nWeb3的虫洞！',
-    section1P2: '通过The Base构建的社交数据可用层进入Web3，使用Web2身份和声誉赚取加密货币。',
-    section1P3: '无Chrome插件，无gas费。您可以像往常一样从Twitter App进入Web3',
+    section1P2: '通过内容策展协议和去中心化社区平台启动你的社区',
+    section1P3: '无插件，无gas fee，重新定义内容分发网络',
     getStart: '开始',
     join: '加入 Discord',
     feature: 'FEATURE',
